@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commodities",
+  "info": {
+    "singularName": "commodity",
+    "pluralName": "commodities",
+    "displayName": "commodity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "enumeration",
+      "enum": [
+        "yumeng",
+        "maileishi"
+      ],
+      "required": true
+    },
+    "coverImg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "characteristic": {
+      "type": "text"
+    },
+    "introduce": {
+      "type": "text"
+    },
+    "context": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "standard"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

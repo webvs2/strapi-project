@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_brand_typs_brands",
+  "info": {
+    "displayName": "brand"
+  },
+  "options": {},
+  "attributes": {
+    "typeID": {
+      "type": "enumeration",
+      "enum": [
+        "yumeng",
+        "yangpengfei"
+      ]
+    }
+  }
+}

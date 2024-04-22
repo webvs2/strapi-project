@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restaurant_news",
+  "info": {
+    "singularName": "restaurant-new",
+    "pluralName": "restaurant-news",
+    "displayName": "RestaurantNew"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "describe": {
+      "type": "text"
+    },
+    "con": {
+      "type": "richtext"
+    }
+  }
+}

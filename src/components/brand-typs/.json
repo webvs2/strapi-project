@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_brand_typs_",
+  "info": {
+    "displayName": "品牌种类"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "yumeng",
+        "pengfei"
+      ]
+    }
+  }
+}
