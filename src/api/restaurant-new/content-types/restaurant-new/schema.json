@@ -4,7 +4,8 @@
   "info": {
     "singularName": "restaurant-new",
     "pluralName": "restaurant-news",
-    "displayName": "RestaurantNew"
+    "displayName": "RestaurantNew",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,8 +18,12 @@
     "describe": {
       "type": "text"
     },
-    "con": {
-      "type": "richtext"
+    "context": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBalloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

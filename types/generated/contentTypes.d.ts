@@ -481,6 +481,7 @@ export interface ApiRestaurantNewRestaurantNew extends Schema.CollectionType {
     singularName: 'restaurant-new';
     pluralName: 'restaurant-news';
     displayName: 'RestaurantNew';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -488,7 +489,13 @@ export interface ApiRestaurantNewRestaurantNew extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     describe: Attribute.Text;
-    con: Attribute.RichText;
+    context: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBalloon';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
