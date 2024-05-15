@@ -362,6 +362,46 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiArticleArticle extends Schema.CollectionType {
+  collectionName: 'articles';
+  info: {
+    singularName: 'article';
+    pluralName: 'articles';
+    displayName: 'article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    info: Attribute.Text & Attribute.Required;
+    banner: Attribute.Media;
+    isHot: Attribute.Boolean & Attribute.DefaultTo<false>;
+    context: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBrandBrand extends Schema.CollectionType {
   collectionName: 'brands';
   info: {
@@ -432,81 +472,6 @@ export interface ApiCommodityCommodity extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::commodity.commodity',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRestaurantRestaurant extends Schema.CollectionType {
-  collectionName: 'restaurants';
-  info: {
-    singularName: 'restaurant';
-    pluralName: 'restaurants';
-    displayName: 'Restaurant';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.Required & Attribute.Unique;
-    Context: Attribute.RichText & Attribute.Required;
-    Date: Attribute.DateTime;
-    Banner: Attribute.Media;
-    Img: Attribute.Media;
-    Name: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::restaurant.restaurant',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::restaurant.restaurant',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRestaurantNewRestaurantNew extends Schema.CollectionType {
-  collectionName: 'restaurant_news';
-  info: {
-    singularName: 'restaurant-new';
-    pluralName: 'restaurant-news';
-    displayName: 'RestaurantNew';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    describe: Attribute.Text;
-    context: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbarBalloon';
-        }
-      >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::restaurant-new.restaurant-new',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::restaurant-new.restaurant-new',
       'oneToOne',
       'admin::user'
     > &
@@ -950,10 +915,9 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::article.article': ApiArticleArticle;
       'api::brand.brand': ApiBrandBrand;
       'api::commodity.commodity': ApiCommodityCommodity;
-      'api::restaurant.restaurant': ApiRestaurantRestaurant;
-      'api::restaurant-new.restaurant-new': ApiRestaurantNewRestaurantNew;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
