@@ -47,6 +47,17 @@
         "preset": "standard"
       },
       "customField": "plugin::ckeditor.CKEditor"
+    },
+    "isHot": {
+      "type": "boolean"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "dog",
+        "cat"
+      ],
+      "default": "cat"
     }
   }
 }

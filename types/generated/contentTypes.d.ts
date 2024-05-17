@@ -461,6 +461,8 @@ export interface ApiCommodityCommodity extends Schema.CollectionType {
           preset: 'standard';
         }
       >;
+    isHot: Attribute.Boolean;
+    type: Attribute.Enumeration<['dog', 'cat']> & Attribute.DefaultTo<'cat'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
