@@ -57,7 +57,8 @@
         "dog",
         "cat"
       ],
-      "default": "cat"
+      "default": "cat",
+      "required": true
     }
   }
 }
