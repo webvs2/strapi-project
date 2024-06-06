@@ -21,21 +21,30 @@
       "component": "brand-typs.brand"
     },
     "images": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
+      ]
+    },
+    "detailsImg": {
+      "allowedTypes": [
+        "images"
       ],
       "type": "media",
       "multiple": false

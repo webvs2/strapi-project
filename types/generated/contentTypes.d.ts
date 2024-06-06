@@ -418,6 +418,7 @@ export interface ApiBrandBrand extends Schema.CollectionType {
     brandId: Attribute.Component<'brand-typs.brand'>;
     images: Attribute.Media;
     logo: Attribute.Media;
+    detailsImg: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -449,7 +450,10 @@ export interface ApiCommodityCommodity extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    brand: Attribute.Enumeration<['yumeng', 'maileishi']> & Attribute.Required;
+    brand: Attribute.Enumeration<
+      ['RSER', 'beichenyipin', 'guanxianchun', 'yumeng', 'xianbeiya', 'aiduoxi']
+    > &
+      Attribute.Required;
     coverImg: Attribute.Media;
     characteristic: Attribute.Text;
     introduce: Attribute.Text;
@@ -458,7 +462,7 @@ export interface ApiCommodityCommodity extends Schema.CollectionType {
         'plugin::ckeditor.CKEditor',
         {
           output: 'HTML';
-          preset: 'standard';
+          preset: 'rich';
         }
       >;
     isHot: Attribute.Boolean;

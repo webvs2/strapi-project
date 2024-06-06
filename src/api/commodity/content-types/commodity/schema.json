@@ -18,8 +18,12 @@
     "brand": {
       "type": "enumeration",
       "enum": [
+        "RSER",
+        "beichenyipin",
+        "guanxianchun",
         "yumeng",
-        "maileishi"
+        "xianbeiya",
+        "aiduoxi"
       ],
       "required": true
     },
@@ -44,7 +48,7 @@
       "type": "customField",
       "options": {
         "output": "HTML",
-        "preset": "standard"
+        "preset": "rich"
       },
       "customField": "plugin::ckeditor.CKEditor"
     },
