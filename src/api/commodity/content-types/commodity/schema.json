@@ -63,6 +63,11 @@
       ],
       "default": "cat",
       "required": true
+    },
+    "productRange": {
+      "type": "string",
+      "required": true,
+      "default": "宠物零食"
     }
   }
 }

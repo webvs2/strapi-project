@@ -469,6 +469,9 @@ export interface ApiCommodityCommodity extends Schema.CollectionType {
     type: Attribute.Enumeration<['dog', 'cat']> &
       Attribute.Required &
       Attribute.DefaultTo<'cat'>;
+    productRange: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u5BA0\u7269\u96F6\u98DF'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
